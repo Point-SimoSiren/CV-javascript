@@ -11,11 +11,26 @@
         <button onclick="home()">Home</button>
         <button onclick="skills()">My skills</button>
         <button>Projects</button>
-        <button>Contact</button>
+        <button id="contact">Contact</button>
 
         <div id="root"></div>
     </center>
     <script>
+        // Esimerkin vuoksi event listenerin määritys js koodissa
+        var btn = document.getElementById("contact")
+        btn.addEventListener("click", contact)
+
+        function contact() {
+            // Rootin tyhjennys
+            document.getElementById("root").innerHTML = ""
+            // Elementtien luominen contact tiedon näyttämiseksi
+            const element = document.createElement("h3")
+            const email =  document.createTextNode("koodari@koodari.com")
+            element.appendChild(email)
+            document.getElementById("root").appendChild(element)
+        }
+
+  
 
  //--------------------------------------------------------       
         
