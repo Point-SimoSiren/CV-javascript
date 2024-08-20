@@ -8,7 +8,7 @@
 <body>
     <center>
         <h1>Digital CV</h1>
-        <button>Home</button>
+        <button onclick="home()">Home</button>
         <button onclick="skills()">My skills</button>
         <button>Projects</button>
         <button>Contact</button>
@@ -16,9 +16,24 @@
         <div id="root"></div>
     </center>
     <script>
+
+ //--------------------------------------------------------       
+        
+        function home() {
+                    let x = `
+                    <h3>Welcome!</h3>
+
+                    <p>This is my digital CV page</p>
+                    <p>Enjoy!</p>
+                    `
+                    document.getElementById("root").innerHTML = x
+                }
+
+ //--------------------------------------------------------
+
         function skills() {
             let x = `
-            <ul>
+            <ul style="max-width: 10%">
                 <li>C#</li>
                 <li>WPF</li>
                 <li>Unity</li>
@@ -27,6 +42,8 @@
             `
             document.getElementById("root").innerHTML = x
         }
+//--------------------------------------------------------
+
     </script>
 </body>
 </html>
