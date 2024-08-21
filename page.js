@@ -43,3 +43,8 @@
 
         // Kun sivu latautuu kutsutaan home funktiota että saa alkusivun näkyviin
         home()
+
+        // Pvm näyttäminen
+        const date = new Date();
+        let text = date.toLocaleString("fi-FI");
+        document.getElementById("footer").innerText = text
