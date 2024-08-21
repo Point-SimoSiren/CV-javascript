@@ -44,7 +44,20 @@
         // Kun sivu latautuu kutsutaan home funktiota että saa alkusivun näkyviin
         home()
 
-        // Pvm näyttäminen
-        const date = new Date();
-        let text = date.toLocaleString("fi-FI");
-        document.getElementById("footer").innerText = text
+        // Footer tyylit
+        document.getElementById("footer").style.backgroundColor =  "lightblue"
+        document.getElementById("footer").style.padding = "80px"
+        document.getElementById("footer").style.marginTop = "400px"
+
+
+        // Pvm päivittäminen ruudulle
+        function updateDate() {
+            const date = new Date();
+            let text = date.toLocaleString("fi-FI");
+            document.getElementById("footer").innerText = text
+        }
+
+        // Ajastus  päivittämään päivämäärää 1000 ms välein = 1 sekunti
+        setInterval(() => {
+            updateDate()
+        }, 1000);
