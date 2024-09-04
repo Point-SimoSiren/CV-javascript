@@ -8,11 +8,17 @@ css, ja selaimessa suoritettava javascript.
  Server.js on sovelluksen juuritasolla ja sisältää
  backend toiminnallisuuden, eli palvelimen.
 
+ Jos lataat tämän githubista, voit antaa vain komennon
+ npm install.
+
+ Jos luot tiedostot ja kansiot itse:
+
 Komentorivillä kyseisessä juurikansiossa
 sanotaan npm init ja hakataan enteriä.
 Tämä tekee sovelluksestamme aidon node.js projektin.
 
 Sitten annetaan samassa paikassa npm install express
 -komento.
+--------------------
 
 Sovellus suoritetaan node server.js komennolla tai npm start komennollakin saattaa toimia.
