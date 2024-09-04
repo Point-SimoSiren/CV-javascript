@@ -9,7 +9,7 @@ const app = express()
 const recommenders = require('./recommenders.json')
 
 // Jos pyyntö tulee localhost:3000/api/recommenders
-app.get('/api/remommenders', (req, res) => {
+app.get('/api/recommenders', (req, res) => {
     res.json(recommenders)
     })
 
