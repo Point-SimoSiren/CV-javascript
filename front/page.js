@@ -39,7 +39,44 @@
             `
             document.getElementById("root").innerHTML = x
         }
-//--------------------------------------------------------
+//--------------------------------------------------------------------
+
+async function recom() {
+    document.getElementById("root").innerHTML = "<h4>Loading...</h4>"
+
+    var taulukko =
+    `<h2>Recommenders</h2>
+    <table><thead><th>Name</th><th>Phone</th></thead><tbody>`
+
+    try {
+        const response = await fetch("http://localhost:3000/api/recommenders")
+
+        const data = await response.json() // muutetaan json => javascript muotoon
+
+        await data.map(x => { // loopataan läpi oliot map funktiolla, x on 1 olio
+        taulukko += `<tr><td>${x.name}</td>
+                    <td>${x.phone}</td></tr>`
+        })
+
+        // taulukko päätetään ja renderöidään html elementtin
+        taulukko += `</tbody></table>`
+
+        // Timeout ajastus on vai siksi että saadaan latausilmoitus
+        // näkyviin 1 sekunniksi, mutta se on periaatteessa turha
+        setTimeout(() => {
+        document.getElementById("root").innerHTML = taulukko
+    }, 1000)
+        
+    // Virhetilanteen hallinta
+    } 
+    catch (error) {
+        console.error("Error fetching data:", error)
+    }
+
+    }
+
+
+//--------------------------------------------------------------------------
 
         // Kun sivu latautuu kutsutaan home funktiota että saa alkusivun näkyviin
         home()

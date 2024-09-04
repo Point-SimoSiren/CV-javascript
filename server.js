@@ -27,4 +27,5 @@ app.use(express.static(polku))
 
 app.listen(3000, () => {
     console.log('Server is up on http://localhost:3000')
+    console.log('JSON datajuttua voi kokeilla http://localhost:3000/api/recommenders')
 })
